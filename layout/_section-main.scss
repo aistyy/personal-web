@@ -1,0 +1,48 @@
+.section-main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h1 {
+      text-align: center;
+      max-width: 20ch;
+      margin: auto;
+    }
+  }
+
+  &__info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    p {
+      text-align: center;
+      max-width: 63ch;
+      margin: auto;
+    }
+  }
+
+  picture {
+    width: 100%;
+    min-height: 280px;
+    max-height: 510px;
+    img {
+      width: 100%;
+
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  }
+  @media (min-width: 1024px) {
+    gap: 52px;
+  }
+  @media (min-width: 1280px) {
+    gap: 57px;
+  }
+}
