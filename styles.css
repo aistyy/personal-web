@@ -12,9 +12,6 @@
   }
 }
 @media (min-width: 768px) {
-  .section-card {
-    align-items: start;
-  }
   .section-card__content {
     align-items: start;
   }
@@ -141,6 +138,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 .card__content {
@@ -149,6 +147,8 @@ footer {
   gap: 12px;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 .card__content a {
   text-decoration: none;
@@ -156,6 +156,7 @@ footer {
   align-items: center;
   justify-content: center;
   width: 100%;
+  color: var(--text-color);
 }
 @media (max-width: 767px) {
   .card + .card {
@@ -163,9 +164,6 @@ footer {
   }
 }
 @media (min-width: 768px) {
-  .card {
-    align-items: start;
-  }
   .card__content {
     align-items: center;
   }
@@ -187,8 +185,8 @@ footer {
 
 :root {
   --primary-color: #8cc4d8;
-  --text-color: #4d4d4f;
+  --text-color: #2c3e50;
   --heading-color: #605959;
   --card-bg: #b0c6ce;
-  --background-color: rgb(101, 133, 163);
+  --background-color: #8cc4d8;
 }/*# sourceMappingURL=styles.css.map */
