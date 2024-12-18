@@ -1,34 +1,36 @@
-var form = document.getElementById("my-form");
+const form = document.getElementById("my-form");
+const successMessage = "Ačiū už Jūsų laišką! Netrukus susisieksime.";
+const errorMessage = "Atsiprašome, įvyko klaida. Bandykite dar kartą.";
 
 async function handleSubmit(event) {
   event.preventDefault();
-  var status = document.getElementById("my-form-status");
-  var data = new FormData(event.target);
-  fetch(event.target.action, {
-    method: form.method,
-    body: data,
-    headers: {
-      Accept: "application/json",
-    },
-  })
-    .then((response) => {
-      if (response.ok) {
-        status.innerHTML = "Thanks for your submission!";
-        form.reset();
-      } else {
-        response.json().then((data) => {
-          if (Object.hasOwn(data, "errors")) {
-            status.innerHTML = data["errors"]
-              .map((error) => error["message"])
-              .join(", ");
-          } else {
-            status.innerHTML = "Oops! There was a problem submitting your form";
-          }
-        });
-      }
-    })
-    .catch((error) => {
-      status.innerHTML = "Oops! There was a problem submitting your form";
+  const status = document.getElementById("my-form-status");
+  const data = new FormData(event.target);
+
+  try {
+    const response = await fetch(event.target.action, {
+      method: event.target.method,
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
     });
+
+    if (response.ok) {
+      status.innerHTML = successMessage;
+      event.target.reset();
+    } else {
+      const responseData = await response.json();
+      if (responseData.errors) {
+        status.innerHTML = responseData.errors
+          .map((error) => error.message)
+          .join(", ");
+      } else {
+        status.innerHTML = errorMessage;
+      }
+    }
+  } catch (error) {
+    status.innerHTML = errorMessage;
+  }
 }
 form.addEventListener("submit", handleSubmit);
