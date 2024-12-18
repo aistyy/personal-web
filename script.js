@@ -34,3 +34,6 @@ async function handleSubmit(event) {
   }
 }
 form.addEventListener("submit", handleSubmit);
+
+const getCurrentYear = () => new Date().getFullYear();
+document.getElementById("footer-year").innerHTML = getCurrentYear();

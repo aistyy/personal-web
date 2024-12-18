@@ -51,32 +51,28 @@
             </div>
           </div>
         </section>
-        <!-- <form id="forma">
-          <label type="text">
-            Prenumeruoti mano naujienlaiškius galite čia:
-          </label>
-          <input
-            required
-            type="email"
-            id="email"
-            placeholder="Įrašykite savo el.paštą"
-          />
-          <button type="submit">Patvirtinti</button>
-        </form> -->
         <form
+          class="contact-form"
           id="my-form"
           action="https://formspree.io/f/xyzyqvpe"
           method="POST"
         >
-          <label>Email:</label>
-          <input type="email" name="email" />
-          <label>Message:</label>
-          <input type="text" name="message" />
-          <button id="my-form-button">Submit</button>
-          <p id="my-form-status"></p>
+          <label for="email">El. paštas:</label>
+          <input id="email" type="email" name="email" required />
+          <label for="message">Žinutė:</label>
+          <textarea rows="5" id="message" name="message" required></textarea>
+          <button type="submit" class="contact-form-btn" id="my-form-button">
+            Submit
+          </button>
+          <p id="my-form-status" class="contact-form-status"></p>
         </form>
       </div>
     </main>
-    <footer><p>&copy; 2024 Mano Svetainė. Visos teisės saugomos.</p></footer>
+    <footer>
+      <p>
+        &copy; <span id="footer-year"></span> Mano svetainė. Visos teisės
+        saugomos.
+      </p>
+    </footer>
   </body>
 </html>
