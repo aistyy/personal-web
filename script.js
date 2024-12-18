@@ -36,4 +36,11 @@ async function handleSubmit(event) {
 form.addEventListener("submit", handleSubmit);
 
 const getCurrentYear = () => new Date().getFullYear();
-document.getElementById("footer-year").innerHTML = getCurrentYear();
+document.getElementById("footer-year").textContent = getCurrentYear();
+
+const textarea = document.getElementById("message");
+const charCount = document.getElementById("char-count");
+
+textarea.addEventListener("input", () => {
+  charCount.textContent = `Simbolių skaičius: ${textarea.value.length}`;
+});
