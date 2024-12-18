@@ -9,9 +9,11 @@ body {
   font-size: 16px;
   color: var(--text-color);
   background-color: var(--background-color);
+  padding: 20px;
   @media (min-width: 768px) {
     font-size: 20px;
     line-height: 30px;
+    padding: 20px;
   }
 }
 
@@ -48,7 +50,32 @@ picture {
   padding: 0 16px;
   margin: 0 auto;
 }
+
+label {
+  font-size: 16px;
+}
 footer {
   font-size: 12px;
   text-align: center;
+}
+button {
+  cursor: pointer;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 10px;
+  padding: 5px 5px;
+  white-space: nowrap;
+  text-align: center;
+
+  &:hover {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px 0 var(--text-color);
+  }
+}
+
+input {
+  padding: 5px 5px;
+  border-radius: 10px;
+  border: 1px solid var(--card-bg);
 }
