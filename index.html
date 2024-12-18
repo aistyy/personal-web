@@ -51,7 +51,7 @@
             </div>
           </div>
         </section>
-        <form id="forma">
+        <!-- <form id="forma">
           <label type="text">
             Prenumeruoti mano naujienlaiškius galite čia:
           </label>
@@ -62,6 +62,18 @@
             placeholder="Įrašykite savo el.paštą"
           />
           <button type="submit">Patvirtinti</button>
+        </form> -->
+        <form
+          id="my-form"
+          action="https://formspree.io/f/xyzyqvpe"
+          method="POST"
+        >
+          <label>Email:</label>
+          <input type="email" name="email" />
+          <label>Message:</label>
+          <input type="text" name="message" />
+          <button id="my-form-button">Submit</button>
+          <p id="my-form-status"></p>
         </form>
       </div>
     </main>
