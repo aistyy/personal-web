@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       size: Math.random() * 10 + 5,
       color: colors[Math.floor(Math.random() * colors.length)],
       speedX: Math.random() * 3 - 1.5,
-      speedY: Math.random() * 5 - 1,
+      speedY: Math.random() * 5,
       rotation: Math.random() * 360,
     };
     confettis.push(confetti);
